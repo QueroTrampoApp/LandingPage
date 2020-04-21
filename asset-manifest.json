@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/qt-landing/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/qt-landing/static/js/main.c754e9e1.chunk.js",
+    "main.js.map": "/qt-landing/static/js/main.c754e9e1.chunk.js.map",
+    "runtime-main.js": "/qt-landing/static/js/runtime-main.446d8146.js",
+    "runtime-main.js.map": "/qt-landing/static/js/runtime-main.446d8146.js.map",
+    "static/js/2.fc709fe8.chunk.js": "/qt-landing/static/js/2.fc709fe8.chunk.js",
+    "static/js/2.fc709fe8.chunk.js.map": "/qt-landing/static/js/2.fc709fe8.chunk.js.map",
+    "index.html": "/qt-landing/index.html",
+    "precache-manifest.998cce21a7e27c12a9fa62cc27cbcc31.js": "/qt-landing/precache-manifest.998cce21a7e27c12a9fa62cc27cbcc31.js",
+    "service-worker.js": "/qt-landing/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/qt-landing/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.fc709fe8.chunk.js.LICENSE.txt": "/qt-landing/static/js/2.fc709fe8.chunk.js.LICENSE.txt",
+    "static/media/qt_cor-01.png": "/qt-landing/static/media/qt_cor-01.0ab059c7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.446d8146.js",
+    "static/js/2.fc709fe8.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.c754e9e1.chunk.js"
+  ]
+}
