@@ -11,11 +11,6 @@ class Landing extends React.Component {
         return (
             <div style={{ backgroundColor: '#FFEBCF', minHeight: '100vh' }}>
                 <Grommet>
-                    {/* <nav className="navbar navbar-light" style={{ backgroundColor: '#ED6F19' }}>
-                    <a className='navbar-brand'>
-                        <img src={require('./qt_preto.png')} width="50" height="50"></img> 
-                     </a> 
-                 </nav> */}
                     <Box direction='row-responsive' align='center' justify='center'>
                         <Box pad='xlarge' align='center' className=''>
                             <Box height="small" width="large">
