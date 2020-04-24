@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/qt-landing/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/qt-landing/static/js/main.a0f0957b.chunk.js",
-    "main.js.map": "/qt-landing/static/js/main.a0f0957b.chunk.js.map",
-    "runtime-main.js": "/qt-landing/static/js/runtime-main.446d8146.js",
-    "runtime-main.js.map": "/qt-landing/static/js/runtime-main.446d8146.js.map",
-    "static/js/2.6e3e82ad.chunk.js": "/qt-landing/static/js/2.6e3e82ad.chunk.js",
-    "static/js/2.6e3e82ad.chunk.js.map": "/qt-landing/static/js/2.6e3e82ad.chunk.js.map",
-    "index.html": "/qt-landing/index.html",
-    "precache-manifest.d12aceeb69f77af03502977a9fd32911.js": "/qt-landing/precache-manifest.d12aceeb69f77af03502977a9fd32911.js",
-    "service-worker.js": "/qt-landing/service-worker.js",
-    "static/css/main.5ecd60fb.chunk.css.map": "/qt-landing/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.6e3e82ad.chunk.js.LICENSE.txt": "/qt-landing/static/js/2.6e3e82ad.chunk.js.LICENSE.txt",
-    "static/media/ilustration.png": "/qt-landing/static/media/ilustration.4d87b733.png",
-    "static/media/qt_cor-01.png": "/qt-landing/static/media/qt_cor-01.0ab059c7.png"
+    "main.css": "/landing-page/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/landing-page/static/js/main.c5c3b39f.chunk.js",
+    "main.js.map": "/landing-page/static/js/main.c5c3b39f.chunk.js.map",
+    "runtime-main.js": "/landing-page/static/js/runtime-main.d36f1b0b.js",
+    "runtime-main.js.map": "/landing-page/static/js/runtime-main.d36f1b0b.js.map",
+    "static/js/2.edcad1dc.chunk.js": "/landing-page/static/js/2.edcad1dc.chunk.js",
+    "static/js/2.edcad1dc.chunk.js.map": "/landing-page/static/js/2.edcad1dc.chunk.js.map",
+    "index.html": "/landing-page/index.html",
+    "precache-manifest.34e38cea22552092cf97cc9e1ba9d0c5.js": "/landing-page/precache-manifest.34e38cea22552092cf97cc9e1ba9d0c5.js",
+    "service-worker.js": "/landing-page/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/landing-page/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.edcad1dc.chunk.js.LICENSE.txt": "/landing-page/static/js/2.edcad1dc.chunk.js.LICENSE.txt",
+    "static/media/ilustration.png": "/landing-page/static/media/ilustration.4d87b733.png",
+    "static/media/qt_cor-01.png": "/landing-page/static/media/qt_cor-01.0ab059c7.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.446d8146.js",
-    "static/js/2.6e3e82ad.chunk.js",
+    "static/js/runtime-main.d36f1b0b.js",
+    "static/js/2.edcad1dc.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.a0f0957b.chunk.js"
+    "static/js/main.c5c3b39f.chunk.js"
   ]
 }
