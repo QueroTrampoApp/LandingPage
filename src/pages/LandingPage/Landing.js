@@ -1,24 +1,28 @@
 import React, { Component } from 'react';
-import { Grommet, Box, Image, Header, Text, Anchor, Avatar, ResponsiveContext, Menu, Meter, Stack, Footer } from 'grommet';
-import { Menu as MenuIcon, Instagram, Facebook, FacebookOption } from 'grommet-icons';
+import { Grommet, Box, Image, Header, Text, Anchor, Avatar, ResponsiveContext, Menu, Meter, Stack, Footer, TextInput } from 'grommet';
+import { Menu as MenuIcon, Instagram, FacebookOption, MailOption } from 'grommet-icons';
+import { grommet } from "grommet/themes";
+import { deepMerge } from "grommet/utils";
 
 
 class Landing extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { meter: '45' }
+        this.state = {
+            meter: 45,
+            email: ''
+        }
     }
 
     render() {
         return (
             <div style={{ backgroundColor: "#FFFFFF", minHeight: '100vh' }}>
-                <Grommet>
-                    <Header background="#f6f6f6" pad="small">
+                <Grommet theme={customTheme}>
+                    <Header background='#f6f6f6' pad="small">
                         <Image src={require('./qt_cor-01.png')} style={{ width: '7vh' }} />
                         <ResponsiveContext.Consumer>
                             {responsive =>
                                 responsive === "small" ? (
-
                                     <Menu
                                         icon={<MenuIcon />}
                                         items={[
@@ -41,63 +45,121 @@ class Landing extends React.Component {
 
                         </ResponsiveContext.Consumer>
                     </Header>
-                    {/* <Box background="#FFEBCF" direction='row-responsive' align='center' justify='center'>
-                        <Box pad='larges' align='center' className=''>
-                            <Box height="medium" width="large" direction="row" gap="medium">
-                                <Image fit='contain' fill alignSelf='center' src={require('./qt_cor-01.png')} />
-                                <Box direction="column" alignSelf="center">
-                                    <Text size="8vh" color="#03B1C9">Quero</Text>
-                                    <Text size="8vh" color="#FA842F">‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‎‎Trampo</Text>
-                                </Box>
-                            </Box>
-                        </Box>
-                    </Box> */}
-                    <Box pad='large' align='center'>
-                        <Text style={{ fontSize: '25px' }}>O
-                        <Text style={{ fontSize: '25px', fontWeight: 'bold' }} color='#03B1C9'> Quero</Text>
+
+                    <Box background='#f2f2f2' pad='large' align='center'>
+                        <Text textAlign='center' style={{ fontSize: '25px' }}>O
+                            <Text style={{ fontSize: '25px', fontWeight: 'bold' }} color='#03B1C9'> Quero</Text>
                             <Text style={{ fontSize: '25px', fontWeight: 'bold' }} color='#FA842F'>Trampo </Text>
                         conecta o morador da comunidade à procura de emprego com o empregador de maneira assertiva e personalizada.</Text>
-                        <Box direction='row' style={{ marginTop: '10vh', marginBottom: '5vh' }}>
-                            <Box height='small' width='small'>
-                                <Image fit='contain' fill alignSelf='center' src={require('./ilustration2.png')} />
-                            </Box>
-                            <Box height='small' width='small' >
-                                <Image fit='contain' fill alignSelf='center' src={require('./ilustration3.png')} />
-                            </Box>
+                        <Box style={{ marginTop: '5vh' }}>
+                            <ResponsiveContext.Consumer>
+                                {responsive =>
+                                    responsive === "small" ? (
+                                        <Image fit='contain' fill alignSelf='center' src={require('./ilustration4.png')} style={{ width: '80vw' }} />
+                                    ) : (
+                                            <Image fit='contain' fill alignSelf='center' src={require('./ilustration4.png')} style={{ width: '40vw' }} />
+                                        )}
+                            </ResponsiveContext.Consumer>
                         </Box>
                     </Box>
+                    <Box align='center' pad='large'>
+                        <ResponsiveContext.Consumer>
+                            {responsive =>
+                                responsive === "small" ? (
+                                    <Box gap='xsmall'>
+                                        <Box direction='row' gap='xsmall'>
+                                            <Image src={require('./gif-preto.gif')} style={{ width: '30vw' }} />
+                                            <Box alignSelf='center' gap='small' direction='column'>
+                                                <Text textAlign='center' style={{ fontSize: '25px' }}>Uma nova forma de procurar empregos.</Text>
 
-                    <Box background='#FFEBCF' pad='large' align='center'>
-                        <Box direction='row' align='center' gap='xlarge'>
-                            <Box align='center' alignSelf='center'>
-                                <Stack anchor='center'>
-                                    <Meter
-                                        type="circle"
-                                        background="light-2"
-                                        values={[{ value: this.state.meter, color: "#52CBDC" }]}
-                                        size="small"
-                                        thickness="small"
-                                    />
-                                    <Box direction="row" align="center" pad={{ bottom: "xsmall" }}>
-                                        <Text weight='bold' style={{ fontSize: '5vh' }}>
-                                            {this.state.meter}
-                                        </Text>
-                                        <Text style={{ fontSize: '3vh' }}>%</Text>
+                                            </Box>
+                                        </Box>
+                                    </Box>) : (
+                                        <Box gap='medium'>
+                                            <Box direction='row' gap='xlarge'>
+                                                <Image fit='contain' src={require('./gif-preto.gif')} style={{ width: '10vw' }} />
+                                                <Box alignSelf='center' gap='small' direction='column'>
+                                                    <Text textAlign='center' style={{ fontSize: '25px' }}>Uma nova forma de procurar empregos.</Text>
+
+                                                </Box>
+                                            </Box>
+                                        </Box>
+                                    )}
+                        </ResponsiveContext.Consumer>
+                    </Box>
+                    <Box background='#FFEBCF' pad='xlarge' align='center' style={{ marginBottom: '5vh' }}>
+                        <ResponsiveContext.Consumer>
+                            {responsive =>
+                                responsive === "small" ? (
+                                    <Box>
+                                        <Box direction='row' align='center' gap='medium'>
+                                            <Box align='center' alignSelf='center'>
+                                                <Stack anchor='center'>
+                                                    <Meter
+                                                        type="circle"
+                                                        background="light-2"
+                                                        values={[{ value: this.state.meter, color: "#52CBDC" }]}
+                                                        size="small"
+                                                        thickness="small"
+                                                    />
+
+                                                    <Box direction="row" align="center" pad={{ bottom: "xsmall" }}>
+                                                        <Text weight='bold' style={{ fontSize: '3vh' }}>
+                                                            {this.state.meter}
+                                                        </Text>
+                                                        <Text style={{ fontSize: '3vh' }}>%</Text>
+                                                    </Box>
+                                                </Stack>
+                                            </Box>
+                                            <Box direction='column' gap='small'>
+                                                <Text textAlign='center' style={{ fontSize: '25px' }}>
+                                                    <Text style={{ fontSize: '25px', fontWeight: 'bold' }} >45% </Text>
+                                    da plataforma já foi desenvolvida.</Text>
+                                                <Text textAlign='center' style={{ fontSize: '25px', marginBottom: '5vh' }}>Inscreva-se para receber avisos exclusivos.</Text>
+                                            </Box>
+                                        </Box>
+                                        <TextInput placeholder='Digite seu email' onChange={event => this.setState({ email: event.target.value })}
+                                            icon={<MailOption color='#52CBDC' />} style={{ textAlign: 'center' }} />
                                     </Box>
-                                </Stack>
-                            </Box>
-                            <Text style={{ fontSize: '25px' }}>
-                                <Text style={{ fontSize: '25px', fontWeight: 'bold' }} >45% </Text>
-                            da plataforma já foi desenvolvida.<br /><br />Acompanhe-nos nas redes sociais para ficar por dentro das novidades.</Text>
-                        </Box>
-                    </Box>
-                    <Footer style={{position: 'absolute', bottom: '0', width: '100vw'}} background='#f6f6f6' pad='small' justify='center'>
+                                ) : (
+                                        <Box direction='row' align='center' gap='xlarge'>
+                                            <Box align='center' alignSelf='center'>
 
+                                                <Stack anchor='center'>
+
+                                                    <Meter
+                                                        type="circle"
+                                                        background="light-2"
+                                                        values={[{ value: this.state.meter, color: "#52CBDC" }]}
+                                                        size="small"
+                                                        thickness="small"
+                                                    />
+
+                                                    <Box direction="row" align="center" pad={{ bottom: "xsmall" }}>
+                                                        <Text weight='bold' style={{ fontSize: '5vh' }}>
+                                                            {this.state.meter}
+                                                        </Text>
+                                                        <Text style={{ fontSize: '3vh' }}>%</Text>
+                                                    </Box>
+                                                </Stack>
+                                            </Box>
+                                            <Box direction='column' gap='small'>
+                                                <Text style={{ fontSize: '25px' }}>
+                                                    <Text style={{ fontSize: '25px', fontWeight: 'bold' }} >45% </Text>
+                                    da plataforma já foi desenvolvida.</Text>
+                                                <Text textAlign='center' style={{ fontSize: '25px', marginBottom: '1vh' }}>Inscreva-se para receber avisos exclusivos.</Text>
+                                                <TextInput placeholder='Digite seu email' onChange={event => this.setState({ email: event.target.value })}
+                                                    icon={<MailOption color='#52CBDC' />} style={{ textAlign: 'center' }} />
+                                            </Box>
+                                        </Box>
+                                    )}
+                        </ResponsiveContext.Consumer>
+                    </Box>
+                    <Footer style={{ position: 'static', bottom: '0', width: '100vw' }} background='#f6f6f6' pad='small' justify='center'>
                         <Box direction='row' gap='xxsmall' justify='center'>
                             <Anchor icon={<Instagram color='#52CBDC' />} />
                             <Anchor icon={<FacebookOption color='#52CBDC' />} />
                         </Box>
-
                     </Footer>
                 </Grommet>
 
@@ -106,4 +168,11 @@ class Landing extends React.Component {
     }
 }
 
+const customTheme = deepMerge(grommet, {
+    global: {
+        colors: {
+            focus: '#52CBDC'
+        }
+    },
+});
 export default Landing;
