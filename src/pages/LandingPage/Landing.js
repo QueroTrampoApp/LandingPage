@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Grommet, Box, Image, Header, Text, Anchor, Avatar, ResponsiveContext, Menu, Meter, Stack, Footer, TextInput } from 'grommet';
+import React, { } from 'react';
+import { Grommet, Box, Image, Header, Text, Anchor, ResponsiveContext, Menu, Meter, Stack, Footer, TextInput } from 'grommet';
 import { Menu as MenuIcon, Instagram, FacebookOption, MailOption } from 'grommet-icons';
 import { grommet } from "grommet/themes";
 import { deepMerge } from "grommet/utils";
@@ -16,10 +16,10 @@ class Landing extends React.Component {
 
     render() {
         return (
-            <div style={{ backgroundColor: "#FFFFFF", minHeight: '100vh' }}>
+            <div style={{ backgroundColor: "#FFFFFF", minHeight: '100vh', paddingLeft: '0', paddingRight: '0', overflowX: 'hidden' }}>
                 <Grommet theme={customTheme}>
                     <Header background='#f6f6f6' pad="small">
-                        <Image src={require('./qt_cor-01.png')} style={{ width: '7vh' }} />
+                        <Image src={require('./qtColor.png')} style={{ width: '7vh' }} />
                         <ResponsiveContext.Consumer>
                             {responsive =>
                                 responsive === "small" ? (
@@ -70,7 +70,7 @@ class Landing extends React.Component {
                                 responsive === "small" ? (
                                     <Box gap='xsmall'>
                                         <Box direction='row' gap='xsmall'>
-                                            <Image src={require('./gif-preto.gif')} style={{ width: '30vw' }} />
+                                            <Image src={require('./mobile.gif')} style={{ width: '30vw' }} />
                                             <Box alignSelf='center' gap='small' direction='column'>
                                                 <Text textAlign='center' style={{ fontSize: '2.5vh' }}>Uma nova forma de procurar empregos.</Text>
                                             </Box>
@@ -78,7 +78,7 @@ class Landing extends React.Component {
                                     </Box>) : (
                                         <Box gap='medium'>
                                             <Box direction='row' gap='xlarge'>
-                                                <Image fit='contain' src={require('./gif-preto.gif')} style={{ width: '10vw' }} />
+                                                <Image fit='contain' src={require('./mobile.gif')} style={{ width: '10vw' }} />
                                                 <Box alignSelf='center' gap='small' direction='column'>
                                                     <Text textAlign='center' style={{ fontSize: '25px' }}>Uma nova forma de procurar empregos.</Text>
 
@@ -160,7 +160,6 @@ class Landing extends React.Component {
                         </Box>
                     </Footer>
                 </Grommet>
-
             </div >
         )
     }
