@@ -9,7 +9,7 @@ class Landing extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            meter: 45,
+            meter: 55,
             email: ''
         }
     }
@@ -26,42 +26,44 @@ class Landing extends React.Component {
                                     <Menu
                                         icon={<MenuIcon />}
                                         items={[
-                                            { label: "Home", onClick: () => { } },
-                                            { label: "Quem somos", onClick: () => { } },
-                                            { label: "Proposta", onClick: () => { } },
-                                            { label: "Contato", onClick: () => { } }
+                                            { label: "Em breve", onClick: () => { } },
                                         ]}
                                     />
 
                                 ) : (
                                         <Box direction="row" gap="medium" style={{ marginRight: '0.5vw' }}>
-                                            <Anchor label="Home" color="#FA842F" href="#" />
-                                            <Anchor label="Quem somos" color="#FA842F" href="#" />
-                                            <Anchor label="Proposta" color="#FA842F" href="#" />
-                                            <Anchor label="Contato" color="#FA842F" href="#" />
+                                            <Anchor label="Em breve" color="#FA842F" href="#" />
                                         </Box>
 
                                     )}
-
                         </ResponsiveContext.Consumer>
                     </Header>
 
-                    <Box background='#f2f2f2' pad='large' align='center'>
-                        <Text textAlign='center' style={{ fontSize: '25px' }}>O
-                            <Text style={{ fontSize: '25px', fontWeight: 'bold' }} color='#03B1C9'> Quero</Text>
-                            <Text style={{ fontSize: '25px', fontWeight: 'bold' }} color='#FA842F'>Trampo </Text>
+                    <ResponsiveContext.Consumer>
+                        {responsive =>
+                            responsive === "small" ? (
+                                <Box background='#f2f2f2' pad='large' align='center'>
+                                    <Text textAlign='center' style={{ fontSize: '2.5vh' }}>O
+                                        <Text style={{ fontSize: '2.5vh', fontWeight: 'bold' }} color='#03B1C9'> Quero</Text>
+                                        <Text style={{ fontSize: '2.5vh', fontWeight: 'bold' }} color='#FA842F'>Trampo </Text>
                         conecta o morador da comunidade à procura de emprego com o empregador de maneira assertiva e personalizada.</Text>
-                        <Box style={{ marginTop: '5vh' }}>
-                            <ResponsiveContext.Consumer>
-                                {responsive =>
-                                    responsive === "small" ? (
+                                    <Box style={{ marginTop: '5vh' }}>
                                         <Image fit='contain' fill alignSelf='center' src={require('./ilustration4.png')} style={{ width: '80vw' }} />
-                                    ) : (
+                                    </Box>
+                                </Box>
+                            ) : (
+                                    <Box background='#f2f2f2' pad='large' align='center'>
+                                        <Text textAlign='center' style={{ fontSize: '25px' }}>O
+                                            <Text style={{ fontSize: '25px', fontWeight: 'bold' }} color='#03B1C9'> Quero</Text>
+                                            <Text style={{ fontSize: '25px', fontWeight: 'bold' }} color='#FA842F'>Trampo </Text>
+                        conecta o morador da comunidade à procura de emprego com o empregador de maneira assertiva e personalizada.</Text>
+                                        <Box style={{ marginTop: '5vh' }}>
                                             <Image fit='contain' fill alignSelf='center' src={require('./ilustration4.png')} style={{ width: '40vw' }} />
-                                        )}
-                            </ResponsiveContext.Consumer>
-                        </Box>
-                    </Box>
+                                        </Box>
+                                    </Box>
+                                )}
+                    </ResponsiveContext.Consumer>
+
                     <Box align='center' pad='large'>
                         <ResponsiveContext.Consumer>
                             {responsive =>
@@ -70,8 +72,7 @@ class Landing extends React.Component {
                                         <Box direction='row' gap='xsmall'>
                                             <Image src={require('./gif-preto.gif')} style={{ width: '30vw' }} />
                                             <Box alignSelf='center' gap='small' direction='column'>
-                                                <Text textAlign='center' style={{ fontSize: '25px' }}>Uma nova forma de procurar empregos.</Text>
-
+                                                <Text textAlign='center' style={{ fontSize: '2.5vh' }}>Uma nova forma de procurar empregos.</Text>
                                             </Box>
                                         </Box>
                                     </Box>) : (
@@ -87,7 +88,8 @@ class Landing extends React.Component {
                                     )}
                         </ResponsiveContext.Consumer>
                     </Box>
-                    <Box background='#FFEBCF' pad='xlarge' align='center' style={{ marginBottom: '5vh' }}>
+
+                    <Box background='#FFEBCF' pad='xlarge' align='center' style={{ marginBottom: '4vh' }}>
                         <ResponsiveContext.Consumer>
                             {responsive =>
                                 responsive === "small" ? (
@@ -102,20 +104,19 @@ class Landing extends React.Component {
                                                         size="small"
                                                         thickness="small"
                                                     />
-
                                                     <Box direction="row" align="center" pad={{ bottom: "xsmall" }}>
-                                                        <Text weight='bold' style={{ fontSize: '3vh' }}>
+                                                        <Text weight='bold' style={{ fontSize: '7vw' }}>
                                                             {this.state.meter}
                                                         </Text>
-                                                        <Text style={{ fontSize: '3vh' }}>%</Text>
+                                                        <Text style={{ fontSize: '7vw' }}>%</Text>
                                                     </Box>
                                                 </Stack>
                                             </Box>
                                             <Box direction='column' gap='small'>
-                                                <Text textAlign='center' style={{ fontSize: '25px' }}>
-                                                    <Text style={{ fontSize: '25px', fontWeight: 'bold' }} >45% </Text>
-                                    da plataforma já foi desenvolvida.</Text>
-                                                <Text textAlign='center' style={{ fontSize: '25px', marginBottom: '5vh' }}>Inscreva-se para receber avisos exclusivos.</Text>
+                                                <Text textAlign='center' style={{ fontSize: '2.5vh' }}>
+                                                    <Text style={{ fontSize: '2.5vh', fontWeight: 'bold' }} >{this.state.meter}% </Text>
+                                                        da plataforma já foi desenvolvida.</Text>
+                                                <Text textAlign='center' style={{ fontSize: '2.5vh', marginBottom: '5vh' }}>Inscreva-se para receber avisos exclusivos.</Text>
                                             </Box>
                                         </Box>
                                         <TextInput placeholder='Digite seu email' onChange={event => this.setState({ email: event.target.value })}
@@ -124,9 +125,7 @@ class Landing extends React.Component {
                                 ) : (
                                         <Box direction='row' align='center' gap='xlarge'>
                                             <Box align='center' alignSelf='center'>
-
                                                 <Stack anchor='center'>
-
                                                     <Meter
                                                         type="circle"
                                                         background="light-2"
@@ -134,7 +133,6 @@ class Landing extends React.Component {
                                                         size="small"
                                                         thickness="small"
                                                     />
-
                                                     <Box direction="row" align="center" pad={{ bottom: "xsmall" }}>
                                                         <Text weight='bold' style={{ fontSize: '5vh' }}>
                                                             {this.state.meter}
@@ -145,8 +143,8 @@ class Landing extends React.Component {
                                             </Box>
                                             <Box direction='column' gap='small'>
                                                 <Text style={{ fontSize: '25px' }}>
-                                                    <Text style={{ fontSize: '25px', fontWeight: 'bold' }} >45% </Text>
-                                    da plataforma já foi desenvolvida.</Text>
+                                                    <Text style={{ fontSize: '25px', fontWeight: 'bold' }} >{this.state.meter}% </Text>
+                                                        da plataforma já foi desenvolvida.</Text>
                                                 <Text textAlign='center' style={{ fontSize: '25px', marginBottom: '1vh' }}>Inscreva-se para receber avisos exclusivos.</Text>
                                                 <TextInput placeholder='Digite seu email' onChange={event => this.setState({ email: event.target.value })}
                                                     icon={<MailOption color='#52CBDC' />} style={{ textAlign: 'center' }} />
@@ -163,7 +161,7 @@ class Landing extends React.Component {
                     </Footer>
                 </Grommet>
 
-            </div>
+            </div >
         )
     }
 }
